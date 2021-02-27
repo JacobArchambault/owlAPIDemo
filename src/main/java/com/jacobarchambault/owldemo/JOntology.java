@@ -3,6 +3,7 @@ package com.jacobarchambault.owldemo;
 import java.io.File;
 
 import org.semanticweb.owlapi.model.IRI;
+import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
@@ -12,21 +13,19 @@ public final class JOntology {
 
 	final File file;
 	final OWLOntologyManager manager;
+	final OWLOntology ontology;
 
 	JOntology(
 			File file,
-			OWLOntologyManager manager) {
+			OWLOntologyManager manager)
+			throws OWLOntologyCreationException {
 		this.file = file;
 		this.manager = manager;
-	}
-
-	final OWLOntology load() throws OWLOntologyCreationException {
-		return manager.loadOntologyFromOntologyDocument(
+		this.ontology = manager.loadOntologyFromOntologyDocument(
 				file);
 	}
 
 	final void save(
-			OWLOntology ontology,
 			File file) throws OWLOntologyStorageException {
 		manager.saveOntology(
 				ontology,
@@ -34,11 +33,12 @@ public final class JOntology {
 						file.toURI()));
 	}
 
-	final void save(
-			OWLOntology ontology) throws OWLOntologyStorageException {
-		manager.saveOntology(
-				ontology,
-				IRI.create(
-						file.toURI()));
+	final void save() throws OWLOntologyStorageException {
+		save(
+				file);
+	}
+
+	final OWLDataFactory ontologyData() {
+		return manager.getOWLDataFactory();
 	}
 }
