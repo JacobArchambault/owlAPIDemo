@@ -15,14 +15,20 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
  */
 public class App {
 	public static void main(
-			String[] args) throws OWLOntologyCreationException, OWLOntologyStorageException {
-        OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-		OWLOntology ontology = manager
-				.loadOntologyFromOntologyDocument(
-						new File("solar-ontology.owl"));
+			String[] args) throws OWLOntologyCreationException,
+			OWLOntologyStorageException {
+		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
+		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(
+				new File(
+						"solar-ontology.owl"));
+
 		System.out.println(
 				"Hello");
-		File file = new File("solar-ontology-result.owl");
-        manager.saveOntology(ontology, IRI.create(file.toURI()));
+		IRI iri = IRI.create(
+				new File(
+						"solar-ontology-result.owl").toURI());
+		manager.saveOntology(
+				ontology,
+				iri);
 	}
 }
