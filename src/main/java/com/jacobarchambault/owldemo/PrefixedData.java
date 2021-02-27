@@ -14,9 +14,9 @@ public final class PrefixedData implements JData {
 		this.prefix = prefix;
 	}
 
-	final OWLClass JOWLClass(
+	final OWLClass jOWLClass(
 			String fromString) {
-		return jOWLData.JOWLClass(
+		return jOWLData.jOWLClass(
 				fromString,
 				prefix);
 	}

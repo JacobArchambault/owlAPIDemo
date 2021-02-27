@@ -15,20 +15,20 @@ public final class JOWLData implements JData {
 		dataFactory = ontology.ontologyData();
 	}
 
-	final OWLClass JOWLClass(
+	final OWLClass jOWLClass(
 			IRI fromIri) {
 		return dataFactory.getOWLClass(
 				fromIri);
 	}
 
-	final OWLClass JOWLClass(
+	final OWLClass jOWLClass(
 			String fromString) {
-		return JOWLClass(
+		return jOWLClass(
 				IRI.create(
 						fromString));
 	}
 
-	final OWLClass JOWLClass(
+	final OWLClass jOWLClass(
 			String fromString,
 			PrefixManager withPrefix) {
 		return dataFactory.getOWLClass(
