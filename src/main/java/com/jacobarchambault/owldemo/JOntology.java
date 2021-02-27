@@ -21,6 +21,5 @@ public final class JOntology {
 		return manager.create()
 				.loadOntologyFromOntologyDocument(
 						file);
-
 	}
 }
