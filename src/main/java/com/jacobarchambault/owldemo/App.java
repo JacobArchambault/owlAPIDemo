@@ -3,10 +3,8 @@ package com.jacobarchambault.owldemo;
 import java.io.File;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
-import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
-import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 
 /**
@@ -17,18 +15,15 @@ public class App {
 	public static void main(
 			String[] args) throws OWLOntologyCreationException,
 			OWLOntologyStorageException {
-		OWLOntologyManager manager = OWLManager.createOWLOntologyManager();
-		OWLOntology ontology = manager.loadOntologyFromOntologyDocument(
+		JOntology jOntology = new JOntology(
 				new File(
-						"solar-ontology.owl"));
+						"solar-ontology.owl"),
+				OWLManager.createConcurrentOWLOntologyManager());
+		OWLOntology ontology = jOntology.load();
 
-		System.out.println(
-				"Hello");
-		IRI iri = IRI.create(
-				new File(
-						"solar-ontology-result.owl").toURI());
-		manager.saveOntology(
+		jOntology.save(
 				ontology,
-				iri);
+				new File(
+						"solar-ontology-result.owl"));
 	}
 }
