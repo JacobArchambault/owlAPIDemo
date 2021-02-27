@@ -12,6 +12,60 @@
     <owl:Ontology rdf:about="http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology">
         <owl:imports rdf:resource="https://saref.etsi.org/saref4bldg/v1.1.2/"/>
     </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#Thermometer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#Thermometer">
+        <rdfs:subClassOf rdf:resource="https://saref.etsi.org/saref4bldg/FlowInstrument"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#pump_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#pump_1">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4bldg/Pump"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#solar_panel_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#solar_panel_1">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4bldg/SolarDevice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#tank_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology#tank_1">
+        <rdf:type rdf:resource="https://saref.etsi.org/saref4bldg/Tank"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
