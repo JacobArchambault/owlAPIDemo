@@ -19,14 +19,14 @@ public class App {
 				new File(
 						"solar-ontology.owl"),
 				OWLManager.createConcurrentOWLOntologyManager());
+		JOWLData baseOWLData = new JOWLData(
+				jOntology);
 		PrefixedData sarefData = new PrefixedData(
-				new JOWLData(
-						jOntology),
+				baseOWLData,
 				new DefaultPrefixManager(
 						"https://saref.etsi.org/saref4bldg/v1.1.2/#"));
 		PrefixedData myData = new PrefixedData(
-				new JOWLData(
-						jOntology),
+				baseOWLData,
 				new DefaultPrefixManager(
 						"http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology/#"));
 
