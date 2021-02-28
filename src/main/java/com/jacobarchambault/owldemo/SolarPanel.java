@@ -8,4 +8,5 @@ public class SolarPanel {
 		this.shortName = shortName;
 	}
 	
+	
 }

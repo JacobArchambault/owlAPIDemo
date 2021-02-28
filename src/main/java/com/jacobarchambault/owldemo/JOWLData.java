@@ -3,6 +3,7 @@ package com.jacobarchambault.owldemo;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.PrefixManager;
 
 public final class JOWLData implements JData {
@@ -34,5 +35,8 @@ public final class JOWLData implements JData {
 		return dataFactory.getOWLClass(
 				fromString,
 				withPrefix);
+	}
+	final OWLNamedIndividual jOWLNamedIndividual(String fromString, PrefixManager withPrefix) {
+		return dataFactory.getOWLNamedIndividual(fromString, withPrefix);
 	}
 }
