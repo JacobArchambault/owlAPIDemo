@@ -11,15 +11,10 @@ public class SolarPanel {
 		this.shortName = shortName;
 	}
 
-	double generateEnergy(
-			boolean sunIsOut,
-			double ambientTemperatureInCelsius) throws Exception {
-		// For this example, we'll set DCVoltage to 30, since that's pretty standard for
-		// .5 volts per cell, and 60 cells per panel
-		double dcVoltage = 30;
-		if (!sunIsOut) {
-			return 0;
-		} else if (ambientTemperatureInCelsius > 25) {
+	private double adjustVoltageForTemperature(
+			double ambientTemperatureInCelsius,
+			double dcVoltage) throws Exception {
+		if (ambientTemperatureInCelsius > 25) {
 			return dcVoltage;
 		}
 		// Adjust voltage for ambient temperature following 2020 NFPA, found at section
@@ -101,5 +96,15 @@ public class SolarPanel {
 			double lowInclusive,
 			double highExclusive) {
 		return number >= lowInclusive && number < highExclusive;
+	}
+
+	double generateEnergy(
+			boolean sunIsOut,
+			double ambientTemperatureInCelsius) throws Exception {
+		// For this example, we'll set DCVoltage to 30, since that's pretty standard for
+		// .5 volts per cell, and 60 cells per panel
+		return sunIsOut ? adjustVoltageForTemperature(
+				ambientTemperatureInCelsius,
+				30) : 0;
 	}
 }

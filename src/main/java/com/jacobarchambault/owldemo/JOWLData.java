@@ -7,8 +7,8 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.PrefixManager;
 
 public final class JOWLData implements JData {
-	final JOntology ontology;
 	final OWLDataFactory dataFactory;
+	final JOntology ontology;
 
 	JOWLData(
 			JOntology ontology) {
@@ -36,7 +36,12 @@ public final class JOWLData implements JData {
 				fromString,
 				withPrefix);
 	}
-	final OWLNamedIndividual jOWLNamedIndividual(String fromString, PrefixManager withPrefix) {
-		return dataFactory.getOWLNamedIndividual(fromString, withPrefix);
+
+	final OWLNamedIndividual jOWLNamedIndividual(
+			String fromString,
+			PrefixManager withPrefix) {
+		return dataFactory.getOWLNamedIndividual(
+				fromString,
+				withPrefix);
 	}
 }

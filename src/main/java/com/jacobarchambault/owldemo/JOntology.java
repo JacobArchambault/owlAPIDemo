@@ -25,12 +25,8 @@ public final class JOntology {
 				file);
 	}
 
-	final void save(
-			File file) throws OWLOntologyStorageException {
-		manager.saveOntology(
-				ontology,
-				IRI.create(
-						file.toURI()));
+	final OWLDataFactory ontologyData() {
+		return manager.getOWLDataFactory();
 	}
 
 	final void save() throws OWLOntologyStorageException {
@@ -38,7 +34,11 @@ public final class JOntology {
 				file);
 	}
 
-	final OWLDataFactory ontologyData() {
-		return manager.getOWLDataFactory();
+	final void save(
+			File file) throws OWLOntologyStorageException {
+		manager.saveOntology(
+				ontology,
+				IRI.create(
+						file.toURI()));
 	}
 }

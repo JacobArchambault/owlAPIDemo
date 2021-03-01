@@ -29,6 +29,9 @@ public class App {
 				baseOWLData,
 				new DefaultPrefixManager(
 						"http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology/#"));
+		SolarPanel solarPanel = new SolarPanel(
+				myData,
+				"solar_panel_1");
 
 		jOntology.save(
 				new File(
