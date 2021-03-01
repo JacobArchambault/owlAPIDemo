@@ -16,26 +16,26 @@ public final class JOntology {
 	final OWLOntology ontology;
 
 	JOntology(
-			File file,
-			OWLOntologyManager manager)
+			final File file,
+			final OWLOntologyManager manager)
 			throws OWLOntologyCreationException {
 		this.file = file;
 		this.manager = manager;
-		this.ontology = manager.loadOntologyFromOntologyDocument(
+		ontology = manager.loadOntologyFromOntologyDocument(
 				file);
 	}
 
-	final OWLDataFactory ontologyData() {
+	OWLDataFactory ontologyData() {
 		return manager.getOWLDataFactory();
 	}
 
-	final void save() throws OWLOntologyStorageException {
+	void save() throws OWLOntologyStorageException {
 		save(
 				file);
 	}
 
-	final void save(
-			File file) throws OWLOntologyStorageException {
+	void save(
+			final File file) throws OWLOntologyStorageException {
 		manager.saveOntology(
 				ontology,
 				IRI.create(

@@ -5,15 +5,15 @@ public class SolarPanel {
 	final String shortName;
 
 	SolarPanel(
-			PrefixedData data,
-			String shortName) {
+			final PrefixedData data,
+			final String shortName) {
 		this.data = data;
 		this.shortName = shortName;
 	}
 
 	private double adjustVoltageForTemperature(
-			double ambientTemperatureInCelsius,
-			double dcVoltage) throws Exception {
+			final double ambientTemperatureInCelsius,
+			final double dcVoltage) throws Exception {
 		if (ambientTemperatureInCelsius > 25) {
 			return dcVoltage;
 		}
@@ -92,15 +92,15 @@ public class SolarPanel {
 	}
 
 	private boolean isInRange(
-			double number,
-			double lowInclusive,
-			double highExclusive) {
+			final double number,
+			final double lowInclusive,
+			final double highExclusive) {
 		return number >= lowInclusive && number < highExclusive;
 	}
 
 	double generateEnergy(
-			boolean sunIsOut,
-			double ambientTemperatureInCelsius) throws Exception {
+			final boolean sunIsOut,
+			final double ambientTemperatureInCelsius) throws Exception {
 		// For this example, we'll set DCVoltage to 30, since that's pretty standard for
 		// .5 volts per cell, and 60 cells per panel
 		return sunIsOut ? adjustVoltageForTemperature(

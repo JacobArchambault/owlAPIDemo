@@ -9,21 +9,21 @@ public final class PrefixedData implements JData {
 	final PrefixManager prefix;
 
 	PrefixedData(
-			JOWLData jOWLData,
-			PrefixManager prefix) {
+			final JOWLData jOWLData,
+			final PrefixManager prefix) {
 		this.jOWLData = jOWLData;
 		this.prefix = prefix;
 	}
 
-	final OWLClass jOWLClass(
-			String fromString) {
+	OWLClass jOWLClass(
+			final String fromString) {
 		return jOWLData.jOWLClass(
 				fromString,
 				prefix);
 	}
 
-	final OWLNamedIndividual jOWLNamedIndividual(
-			String shortName) {
+	OWLNamedIndividual jOWLNamedIndividual(
+			final String shortName) {
 		return jOWLData.jOWLNamedIndividual(
 				shortName,
 				prefix);

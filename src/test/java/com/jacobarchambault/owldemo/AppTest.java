@@ -1,5 +1,6 @@
 package com.jacobarchambault.owldemo;
 
+import junit.framework.Assert;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -22,7 +23,7 @@ public class AppTest extends TestCase {
 	 * @param testName name of the test case
 	 */
 	public AppTest(
-			String testName) {
+			final String testName) {
 		super(
 				testName);
 	}
@@ -31,7 +32,7 @@ public class AppTest extends TestCase {
 	 * Rigourous Test :-)
 	 */
 	public void testApp() {
-		assertTrue(
+		Assert.assertTrue(
 				true);
 	}
 }

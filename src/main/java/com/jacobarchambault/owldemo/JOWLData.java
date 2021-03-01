@@ -11,35 +11,35 @@ public final class JOWLData implements JData {
 	final JOntology ontology;
 
 	JOWLData(
-			JOntology ontology) {
+			final JOntology ontology) {
 		this.ontology = ontology;
 		dataFactory = ontology.ontologyData();
 	}
 
-	final OWLClass jOWLClass(
-			IRI fromIri) {
+	OWLClass jOWLClass(
+			final IRI fromIri) {
 		return dataFactory.getOWLClass(
 				fromIri);
 	}
 
-	final OWLClass jOWLClass(
-			String fromString) {
+	OWLClass jOWLClass(
+			final String fromString) {
 		return jOWLClass(
 				IRI.create(
 						fromString));
 	}
 
-	final OWLClass jOWLClass(
-			String fromString,
-			PrefixManager withPrefix) {
+	OWLClass jOWLClass(
+			final String fromString,
+			final PrefixManager withPrefix) {
 		return dataFactory.getOWLClass(
 				fromString,
 				withPrefix);
 	}
 
-	final OWLNamedIndividual jOWLNamedIndividual(
-			String fromString,
-			PrefixManager withPrefix) {
+	OWLNamedIndividual jOWLNamedIndividual(
+			final String fromString,
+			final PrefixManager withPrefix) {
 		return dataFactory.getOWLNamedIndividual(
 				fromString,
 				withPrefix);

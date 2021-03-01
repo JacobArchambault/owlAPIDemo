@@ -13,23 +13,23 @@ import org.semanticweb.owlapi.util.DefaultPrefixManager;
  */
 public class App {
 	public static void main(
-			String[] args) throws OWLOntologyCreationException,
+			final String[] args) throws OWLOntologyCreationException,
 			OWLOntologyStorageException {
-		JOntology jOntology = new JOntology(
+		final var jOntology = new JOntology(
 				new File(
 						"solar-ontology.owl"),
 				OWLManager.createConcurrentOWLOntologyManager());
-		JOWLData baseOWLData = new JOWLData(
+		final var baseOWLData = new JOWLData(
 				jOntology);
-		PrefixedData sarefData = new PrefixedData(
+		final var sarefData = new PrefixedData(
 				baseOWLData,
 				new DefaultPrefixManager(
 						"https://saref.etsi.org/saref4bldg/v1.1.2/#"));
-		PrefixedData myData = new PrefixedData(
+		final var myData = new PrefixedData(
 				baseOWLData,
 				new DefaultPrefixManager(
 						"http://www.semanticweb.org/jacobarchambault/ontologies/2021/0/solar-ontology/#"));
-		SolarPanel solarPanel = new SolarPanel(
+		final var solarPanel = new SolarPanel(
 				myData,
 				"solar_panel_1");
 
