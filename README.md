@@ -13,3 +13,6 @@ From here, we create three classes JOntology, JOWLData, and PrefixedData, which 
 ## 3 Create custom classes
 ### 3.1 Solar panel
 This class is used to represent the solar panel object in our OWL ontology. After obtaining it from our data, the application checks for sunlight and the ambient temperature value to determine the voltage it is going to transfer to the storage pump, adjusting the voltage so that for equal quantities of sunlight, lower temperatures imply higher energy transfer (this occurs on account of the material properties of the silicon from which the panel's cells are formed).  
+
+### 3.2 Converter
+The Converter takes a Solar Panel passed into its constructor and its `double toAC(double dcVoltage)` method converts the output of the SolarPanel's generateEnergy() method to AC voltage, which is used by most home electrical devices. 
